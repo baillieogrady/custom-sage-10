@@ -1,0 +1,21 @@
+.link {
+    svg {
+        @apply transition-all duration-200 ease-in-out transform;
+    }
+    &:hover {
+        svg {
+            @apply translate-x-2;
+        }
+    }
+
+    &--alt {
+        svg {
+            @apply rotate-180;
+        }
+        &:hover {
+            svg {
+                @apply -translate-x-2;
+            }
+        }
+    }
+}

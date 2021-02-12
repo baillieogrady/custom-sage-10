@@ -1,0 +1,20 @@
+.pagination {
+    > a {
+        @apply h-full inline-block;
+        &:first-of-type {
+            > span {
+                @apply justify-start;
+            }
+        }
+
+        &:last-of-type {
+            > span {
+                @apply justify-end;
+            }
+        }
+    }
+
+    .current {
+        @apply border-b border-red pb-0.5;
+    }
+}

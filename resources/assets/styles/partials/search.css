@@ -1,0 +1,8 @@
+.search {
+    &-form__submit {
+        @apply bg-transparent h-full w-14 absolute right-0 bg-no-repeat bg-center;
+
+        background-size: 27px;
+        background-image: url('../images/search.svg');
+    }
+}

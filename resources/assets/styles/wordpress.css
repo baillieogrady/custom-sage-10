@@ -1,0 +1,7 @@
+.alignright {
+    @apply float-right;
+}
+
+.alignleft {
+    @apply float-left;
+}

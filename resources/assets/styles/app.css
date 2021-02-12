@@ -1,0 +1,42 @@
+@import 'tailwindcss/base';
+
+/*! purgecss start ignore  */
+
+/* global */
+@import 'base';
+@import 'fonts';
+@import 'animations';
+@import 'wordpress';
+
+/* vendor */
+@import 'swiper/swiper-bundle';
+@import 'aos/dist/aos';
+
+/* partials */
+@import 'partials/buttons';
+@import 'partials/embed';
+@import 'partials/pagination';
+@import 'partials/sidebar';
+@import 'partials/search';
+@import 'partials/link';
+@import 'partials/article';
+
+/* layout */
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/banner';
+@import 'layout/listing';
+
+/* blocks */
+@import 'blocks/hero';
+@import 'blocks/timeline';
+@import 'blocks/case-studies';
+@import 'blocks/accordion';
+
+/* templates */
+@import 'templates/single';
+
+/*! purgecss end ignore  */
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

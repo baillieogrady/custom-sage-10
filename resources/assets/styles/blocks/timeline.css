@@ -1,0 +1,42 @@
+.timeline {
+    &__calender {
+        &.text-red {
+            .timeline__fragment {
+                fill: #fff; 
+            }
+        }
+    }
+
+    &__hide {
+        @apply hidden !important;
+    }
+
+    &__date {
+        @apply transform -translate-x-1/2 !important;
+
+        &--back {
+            @apply -rotate-90 !important;
+        }
+
+        &--forward {
+            @apply rotate-90 !important;
+        }
+    }
+}
+
+@screen lg {
+    .timeline {
+        &__thin,
+        &__thick {
+            content: '';
+        }
+
+        &__thick {
+            @apply transform -translate-x-1/2 !important;
+        }
+
+        &__hide {
+            @apply block !important;
+        }
+    }
+}

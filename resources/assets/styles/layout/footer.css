@@ -1,0 +1,50 @@
+.footer {
+    &__nav {
+        li {
+            @apply inline-block uppercase;
+
+            &:not(:last-child)::after {
+                content: '/';
+                @apply px-2;
+            }
+        }
+    }
+
+    &__form {
+        input {
+            @apply leading-none;
+        }
+        input:not([type="submit"]),
+        textarea {
+            @apply w-full bg-grey-80 border-none text-red px-4 py-5 font-semibold tracking-normal mb-4 outline-none;
+
+            &::placeholder {
+                @apply text-red;
+            }
+        }
+
+        textarea {
+            @apply mb-8 py-3;
+        }
+
+        br {
+            @apply hidden;
+        }
+
+        input[type="submit"] {
+            @apply inline-block bg-transparent border-6 border-white text-white py-3 px-8 font-bold tracking-normal leading-normal outline-none cursor-pointer text-2xs transition-all duration-200 ease-in-out;
+
+            &:hover {
+                @apply bg-white text-red;
+            }
+        }
+    }
+}
+
+@screen lg {
+    .footer {
+        &__inner {
+            @apply w-full;
+        }
+    }
+}
