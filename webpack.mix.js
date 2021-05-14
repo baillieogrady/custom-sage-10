@@ -16,7 +16,7 @@ require('laravel-mix-copy-watched');
 
 mix
   .setPublicPath('./dist')
-  .browserSync('localhost/toni-marino/hotpmo/');
+  .browserSync('elpv4.pantheonlocal.com');
 
 mix
   .postCss('resources/assets/styles/app.css', 'dist/styles', [

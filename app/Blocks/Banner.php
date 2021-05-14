@@ -6,7 +6,6 @@ use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Heading;
 use App\Fields\Partials\Wysiwyg;
-use App\Fields\Partials\ButtonFields;
 
 class Banner extends Block
 {
@@ -132,7 +131,6 @@ class Banner extends Block
         $Banner
             ->addFields($this->get(Heading::class))
             ->addFields($this->get(Wysiwyg::class))
-            ->addFields($this->get(ButtonFields::class))
             ->addImage('image');
 
 

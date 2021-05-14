@@ -1,9 +1,0 @@
-.article {
-    &__link {
-        &:hover {
-            + div a > svg {
-                @apply translate-x-2;
-            }
-        }
-    }
-}

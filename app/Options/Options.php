@@ -5,13 +5,6 @@ namespace App\Options;
 use Log1x\AcfComposer\Options as Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Heading;
-use App\Fields\Partials\Wysiwyg;
-use App\Fields\Partials\Form;
-use App\Fields\Partials\ButtonFields;
-use App\Fields\Partials\Newsletter;
-use App\Fields\Partials\HeroFields;
-use App\Fields\Partials\TwoColumnFields;
-use App\Fields\Partials\DominoFields;
 
 class Options extends Field
 {
@@ -125,7 +118,7 @@ class Options extends Field
                 'placement' => 'left',
             ])
                 ->addGroup('header')
-                    ->addFields($this->get(ButtonFields::class))
+                    ->addFields($this->get(Heading::class))
                 ->endGroup();
 
         return $options->build();

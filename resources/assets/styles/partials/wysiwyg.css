@@ -1,0 +1,13 @@
+.wysiwyg {
+    h2 {
+        @apply text-2xl;
+    }
+
+    ul {
+        @apply list-disc;  
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+}

@@ -2,9 +2,8 @@
  * External Dependencies
  */
 
-import Swiper from 'swiper/bundle';
-import AOS from 'aos/dist/aos';
-import lozad from 'lozad';
+// import Swiper from 'swiper/bundle';
+// import lozad from 'lozad';
 
 const app = (function() {
   'use strict';
@@ -12,11 +11,13 @@ const app = (function() {
   // global
   let body = document.querySelector('body');
 
+  // utility
   function handleLazyLoad() {
     const observer = lozad('.lazy');
     observer.observe();
   }
 
+  // blocks
   function handleSliders() {
     // hero Gutenberg block
     var heroSlider = new Swiper('.hero .swiper-container', {
@@ -62,16 +63,6 @@ const app = (function() {
     })
   }
 
-  // append #listing to pagination links on management model archives
-  function handlePagination() {
-    let paginationLinks = document.querySelectorAll('.listing__pagination a');
-
-    for (var i = 0; i < paginationLinks.length; i++) {
-      paginationLinks[i].href += '#listing';
-    }
-  }
-
-  // handle mobile menu on burger click
   function handleMobileMenu() {
     let headerBurger  = document.querySelector('.header__burger'),
         headerNav  = document.querySelector('.header__nav');
@@ -83,38 +74,11 @@ const app = (function() {
     })
   }
 
-  function handleAccordion() {
-    let accordion = document.querySelector('.accordion');
-
-    if(accordion !== null) {
-      accordion.addEventListener('click', function(e){
-        if(e.target.classList.contains('accordion__tab')) {
-          // toggle accordion's content
-          e.target.nextElementSibling.classList.toggle('hidden');
-          // rotate chevron
-          e.target.children[1].classList.toggle('rotate-90');
-        }
-      })
-    }
-  }
-
-  function handleTimeLineAnimation() {
-    // animate on scroll library for date fade in
-    AOS.init({
-      offset: 100,
-      duration: 1000,
-      once: true
-    })
-  }
-
   return {
     init: function() {
-      handleLazyLoad();
-      handleSliders();
-      handleAccordion();
-      handlePagination();
-      handleMobileMenu();
-      handleTimeLineAnimation();
+      // handleLazyLoad();
+      // handleSliders();
+      // handleMobileMenu();
     }
   };
 })();

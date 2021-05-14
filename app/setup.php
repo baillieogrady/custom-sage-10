@@ -79,16 +79,25 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+    // feature image
+    add_image_size('featured', 560, 609, true);
+
     // gutenberg blocks
-    add_image_size('hero', 2690, 1310, true);
-    add_image_size('timeline', 385, 240, true);
-    add_image_size('domino', 405, 335, true);
-    add_image_size('case-studies', 520, 300, true);
-    add_image_size('courses', 474, 400, true);
-    // archives
-    add_image_size('case-studies-archive', 495, 305, true);
-    // single
-    add_image_size('sidebar', 328, 188, true);
+    add_image_size('three-column', 560, 609, true);
+
+    add_image_size('domino', 544, 544, true);
+
+    add_image_size('two-column', 352, 281, true);
+    add_image_size('two-column-big', 736, 509, true);
+
+    add_image_size('gallery', 352, 464, true);
+
+    // templates
+    add_image_size('single-post', 1152, 496, true);
+
+    add_image_size('archive-post', 256, 257, true);
+    add_image_size('archive-post-three-column', 352, 257, true);
+
 
     /**
      * Add theme support for Wide Alignment

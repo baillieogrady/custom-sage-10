@@ -11,7 +11,7 @@
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
 
-    <div id="app" class="flex flex-col min-h-screen relative">
+    <div id="app">
       <?php echo \Roots\view(\Roots\app('sage.view'), \Roots\app('sage.data'))->render(); ?>
     </div>
 
