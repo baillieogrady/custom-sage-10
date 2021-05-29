@@ -112,13 +112,9 @@ class Options extends Field
                 'placement' => 'left',
             ])
                 ->addGroup('global')
-                    ->addImage('logo')
-                ->endGroup()
-            ->addTab('header',[
-                'placement' => 'left',
-            ])
-                ->addGroup('header')
-                    ->addFields($this->get(Heading::class))
+                    ->addGroup('header')
+                        ->addFields($this->get(Heading::class))
+                    ->endGroup()
                 ->endGroup();
 
         return $options->build();

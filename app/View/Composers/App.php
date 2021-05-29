@@ -24,6 +24,7 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'global' => $this->global(),
         ];
     }
 
@@ -35,5 +36,15 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    /**
+     * Returns ACF options
+     *
+     * @return array
+     */
+    public function global()
+    {
+        return get_field('global', 'options');
     }
 }
