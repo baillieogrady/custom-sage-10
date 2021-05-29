@@ -42,8 +42,7 @@
     "php": "^7.2.5",
     "log1x/acf-composer": "^1.5",
     "roots/acorn": "^1.1",
-    "stoutlogic/acf-builder": "^1.10",
-    "jjgrainger/wp-custom-post-type-class": "dev-master"
+    "stoutlogic/acf-builder": "^1.10"
   },
   "require-dev": {
     "filp/whoops": "^2.7",

@@ -1,13 +1,3 @@
-.wysiwyg {
-    h2 {
-        @apply text-2xl;
-    }
+/* .wysiwyg {
 
-    ul {
-        @apply list-disc;  
-    }
-
-    ol {
-        @apply list-decimal;
-    }
-}
+} */

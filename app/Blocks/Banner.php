@@ -5,7 +5,6 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\Heading;
-use App\Fields\Partials\Wysiwyg;
 
 class Banner extends Block
 {
@@ -49,7 +48,7 @@ class Banner extends Block
      *
      * @var array
      */
-    public $post_types = ['page'];
+    public $post_types = [];
 
     /**
      * The parent block type allow list.
@@ -126,15 +125,12 @@ class Banner extends Block
      */
     public function fields()
     {
-        $Banner = new FieldsBuilder('Banner');
+        $banner = new FieldsBuilder('banner');
 
-        $Banner
-            ->addFields($this->get(Heading::class))
-            ->addFields($this->get(Wysiwyg::class))
-            ->addImage('image');
+        $banner
+            ->addFields($this->get(Heading::class));
 
-
-        return $Banner->build();
+        return $banner->build();
     }
 
     /**
@@ -146,9 +142,6 @@ class Banner extends Block
     {
         return [
             'heading' => get_field('heading'),
-            'wysiwyg' => get_field('wysiwyg'),
-            'button' => get_field('button'),
-            'image' => get_field('image'),
         ];
     }
 

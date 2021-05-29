@@ -16,17 +16,10 @@ require('laravel-mix-copy-watched');
 
 mix
   .setPublicPath('./dist')
-  .browserSync('elpv4.pantheonlocal.com');
+  .browserSync('localhost:8000');
 
 mix
   .postCss('resources/assets/styles/app.css', 'dist/styles', [
-    require('postcss-import')(),
-    require('postcss-nested')(),
-    require('tailwindcss')('./tailwind.config.js'),
-  ])
-
-mix
-  .postCss('resources/assets/styles/editor.css', 'dist/styles', [
     require('postcss-import')(),
     require('postcss-nested')(),
     require('tailwindcss')('./tailwind.config.js'),

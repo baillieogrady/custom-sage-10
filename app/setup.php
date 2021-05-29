@@ -27,22 +27,6 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /**
- * Register the theme assets with the block editor.
- *
- * @return void
- */
-add_action('enqueue_block_editor_assets', function () {
-    // if ($manifest = asset('scripts/manifest.asset.php')->get()) {
-    //     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), $manifest['dependencies'], null, true);
-    //     wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), ['sage/vendor.js'], null, true);
-
-    //     wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
-    // }
-
-    wp_enqueue_style('sage/editor.css', asset('styles/editor.css')->uri(), false, null);
-}, 100);
-
-/**
  * Register the initial theme setup.
  *
  * @return void
@@ -80,24 +64,7 @@ add_action('after_setup_theme', function () {
      */
     add_theme_support('post-thumbnails');
     // feature image
-    add_image_size('featured', 560, 609, true);
-
-    // gutenberg blocks
-    add_image_size('three-column', 560, 609, true);
-
-    add_image_size('domino', 544, 544, true);
-
-    add_image_size('two-column', 352, 281, true);
-    add_image_size('two-column-big', 736, 509, true);
-
-    add_image_size('gallery', 352, 464, true);
-
-    // templates
-    add_image_size('single-post', 1152, 496, true);
-
-    add_image_size('archive-post', 256, 257, true);
-    add_image_size('archive-post-three-column', 352, 257, true);
-
+    // add_image_size('featured', 560, 609, true);
 
     /**
      * Add theme support for Wide Alignment
@@ -109,7 +76,7 @@ add_action('after_setup_theme', function () {
      * Enable responsive embeds
      * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
      */
-    add_theme_support('responsive-embeds');
+    // add_theme_support('responsive-embeds');
 
     /**
      * Enable HTML5 markup support
@@ -129,7 +96,7 @@ add_action('after_setup_theme', function () {
      * Enable selective refresh for widgets in customizer
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
-    add_theme_support('customize-selective-refresh-widgets');
+    // add_theme_support('customize-selective-refresh-widgets');
 
     /**
      * Enable theme color palette support
@@ -142,6 +109,12 @@ add_action('after_setup_theme', function () {
     //         'color' => '#525ddc',
     //     ]
     // ]);
+
+
+    /**
+     * Disable edit unnecessary edit screens
+     */
+    define( 'DISALLOW_FILE_EDIT', true );
 }, 20);
 
 /**
