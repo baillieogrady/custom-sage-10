@@ -1,6 +1,6 @@
 /**
  * External Dependencies
- */
+**/
 
 // import Swiper from 'swiper/bundle';
 // import lozad from 'lozad';
@@ -8,18 +8,22 @@
 const app = (function() {
   'use strict';
 
-  // global
-  let body = document.querySelector('body');
+  // variables
+  let _body = document.getElementsByClassName('body')[0];
 
-  // utility
+  // utility functions 
+  function toggleClass(element, cssClass){
+    element.classList.toggle(cssClass);
+  }
+
+  // functions
   function handleLazyLoad() {
     const observer = lozad('.lazy');
     observer.observe();
   }
 
-  // blocks
   function handleSliders() {
-    // hero Gutenberg block
+    // hero Gutenberg block slider
     var heroSlider = new Swiper('.hero .swiper-container', {
       zoom : true,
       watchOverflow: true,
@@ -31,55 +35,27 @@ const app = (function() {
           return `<div class="swiper-pagination-bullet"><span>${index + 1}.0</span><span></span></div>`;
         },
       },
-
-      on: {
-        init: function () {
-          let pagination = document.querySelector('.hero .swiper-pagination');
-          if(this.slides.length < 2) pagination.classList.add('hidden');
-        },
-      }
-    })
-
-    // case-studies Gutenberg block
-    var caseStudiesSlider = new Swiper('.case-studies .swiper-container', {
-      zoom : true,
-      watchOverflow: true,
-      spaceBetween: 32,
-    
-      pagination: {
-        el: '.case-studies .swiper-pagination',
-        clickable: true,
-        renderBullet: function (index) {
-          return `<div class="swiper-pagination-bullet"><span></span><span>CASE STUDY 0.${index + 1}</span></div>`;
-        },
-      },
-
-      on: {
-        init: function () {
-          let pagination = document.querySelector('.case-studies .swiper-pagination');
-          if(this.slides.length < 2) pagination.classList.add('hidden');
-        },
-      }
     })
   }
 
   function handleMobileMenu() {
-    let headerBurger  = document.querySelector('.header__burger'),
-        headerNav  = document.querySelector('.header__nav');
+    let burger  = document.getElementsByName('.burger')[0],
+        headerNav  = document.getElementsByClassName('.header__nav')[0];
 
-    headerBurger.addEventListener('click', function(){
-      headerNav.classList.toggle('active');
-      body.classList.toggle('overflow-y-hidden');
-
+    burger.addEventListener('click', function(){
+      toggleClass(headerNav, 'active');
+      toggleClass(_body, 'disable-scrolling');
     })
   }
 
+  function init(){
+    // handleLazyLoad();
+    // handleMobileMenu();
+    // handleSliders();
+  }
+
   return {
-    init: function() {
-      // handleLazyLoad();
-      // handleSliders();
-      // handleMobileMenu();
-    }
+    init: init
   };
 })();
 

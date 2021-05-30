@@ -10,11 +10,11 @@
 /* @import 'swiper/swiper-bundle'; */
 
 /* partials */
-@import 'partials/buttons';
+@import 'partials/button';
 
-/* layout */
-@import 'layout/header';
-@import 'layout/footer';
+/* partials */
+@import 'partials/header';
+@import 'partials/footer';
 
 /* blocks */
 @import 'blocks/banner';
