@@ -47,15 +47,13 @@ const app = (function() {
       toggleClass(_body, 'disable-scrolling');
     })
   }
-
-  function init(){
-    // handleLazyLoad();
-    // handleMobileMenu();
-    // handleSliders();
-  }
-
+  
   return {
-    init: init
+    init: function() {
+      // handleLazyLoad();
+      // handleMobileMenu();
+      // handleSliders();
+    }
   };
 })();
 

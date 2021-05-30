@@ -1,4 +1,4 @@
-<a href="{{ $href }}" class="btn btn--{{ $type }}" target="{{ $target }}">
+<a href="{{ $href }}" class="btn {{ $classes }}" target="{{ $target }}">
     {{ $text }}
 </a>
   

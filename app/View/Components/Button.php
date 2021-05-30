@@ -7,11 +7,11 @@ use Roots\Acorn\View\Component;
 class Button extends Component
 {
     /**
-     * The button type.
+     * The button classes.
      *
      * @var string
      */
-    public $type;
+    public $classes;
 
     /**
      * The button href.
@@ -37,17 +37,17 @@ class Button extends Component
     /**
      * Create the component instance.
      *
-     * @param  string  $type
+     * @param  string  $classes
      * @param  string  $href
      * @param  string  $target
      * @param  string  $text
      * @return void
      */
-    public function __construct($type = null, $href = null, $target = "_blank", $text = null)
+    public function __construct($href = null, $target = null, $classes = null, $text = null)
     {
-        $this->type = $type;
         $this->href = $href;
         $this->target = $target;
+        $this->classes = $classes;
         $this->text = $text;
     }
 

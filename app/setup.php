@@ -111,7 +111,7 @@ add_action('after_setup_theme', function () {
 
 
     /**
-     * Disable edit unnecessary edit screens
+     * Disable unnecessary edit screens
      */
     define( 'DISALLOW_FILE_EDIT', true );
 }, 20);
