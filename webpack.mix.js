@@ -16,7 +16,7 @@ require('laravel-mix-copy-watched');
 
 mix
   .setPublicPath('./dist')
-  .browserSync('localhost:8000');
+  .browserSync('localhost:10043');
 
 mix
   .postCss('resources/assets/styles/app.css', 'dist/styles', [

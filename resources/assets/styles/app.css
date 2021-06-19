@@ -9,11 +9,9 @@
 /* vendor */
 /* @import 'swiper/swiper-bundle'; */
 
-/* partials */
-@import 'partials/button';
-@import 'partials/header';
-@import 'partials/footer';
-@import 'partials/single';
+/* components */
+@import 'components/header';
+@import 'components/footer';
 
 /* blocks */
 @import 'blocks/banner';
