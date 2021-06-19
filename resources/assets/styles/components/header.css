@@ -1,3 +1,7 @@
-/* .header {
+.header {
+    @apply bg-green-500;
 
-} */
+    span {
+        @apply text-green-200;
+    }
+}

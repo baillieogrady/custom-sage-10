@@ -15,13 +15,6 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'jquery'], null, true);
-
-    // wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
-
-    // if (is_single() && comments_open() && get_option('thread_comments')) {
-    //     wp_enqueue_script('comment-reply');
-    // }
-
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
 }, 100);
 
@@ -31,17 +24,6 @@ add_action('wp_enqueue_scripts', function () {
  * @return void
  */
 add_action('after_setup_theme', function () {
-    /**
-     * Enable features from Soil when plugin is activated
-     * @link https://roots.io/plugins/soil/
-     */
-    // add_theme_support('soil', [
-    //     'clean-up',
-    //     'nav-walker',
-    //     'nice-search',
-    //     'relative-urls'
-    // ]);
-
     /**
      * Enable plugins to manage the document title
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
@@ -62,20 +44,15 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+
     // feature image
     // add_image_size('featured', 560, 609, true);
-
-    /**
-     * Add theme support for Wide Alignment
-     * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment
-     */
-    // add_theme_support('align-wide');
 
     /**
      * Enable responsive embeds
      * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
      */
-    // add_theme_support('responsive-embeds');
+    add_theme_support('responsive-embeds');
 
     /**
      * Enable HTML5 markup support
@@ -90,30 +67,6 @@ add_action('after_setup_theme', function () {
         'script',
         'style'
     ]);
-
-    /**
-     * Enable selective refresh for widgets in customizer
-     * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
-     */
-    // add_theme_support('customize-selective-refresh-widgets');
-
-    /**
-     * Enable theme color palette support
-     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
-     */
-    // add_theme_support('editor-color-palette', [
-    //     [
-    //         'name' => __('Primary', 'sage'),
-    //         'slug' => 'primary',
-    //         'color' => '#525ddc',
-    //     ]
-    // ]);
-
-
-    /**
-     * Disable unnecessary edit screens
-     */
-    define( 'DISALLOW_FILE_EDIT', true );
 }, 20);
 
 /**
